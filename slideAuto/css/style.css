@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+/* setup vi tri cho slide-order */
+.slide ul{
+    position: relative;
+}
+.slide ul li {
+    position: absolute;
+  }
+.slide ul li .slide-order{
+  position: relative;
+}
+
+.slide-order .img-left-1,
+.slide-order .img-left-2,
+.slide-order .img-right,
+.slide-order .text-content{
+    position: absolute; 
+    top: 0;
+    color: white
+}
+.slide-order .img-left-1{
+    top: -70%;
+    opacity: 0;
+}.slide-order .img-left-2{
+    top: -30%;
+    opacity: 0;
+}.slide-order .img-right{
+    right: 0;
+    opacity: 0;
+}
+.slide-order .text-content{
+    top:50%;
+    padding: 0px 30px;
+    width: 20%;
+}
+/* xu ly css background cua slide */
+.slide{
+    width: 100%;
+    height: 100%;
+}
+.slide ul{
+    width: 100%;
+    height: 100%;
+}
+.slide ul li{
+    width: 100%;
+    height: 100%;
+}
+.slide ul li .slide-order{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.slide ul li .slide-order .background{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+/* setup css cho text-content */
+.text-content h2{
+    color: white;
+    margin: 5px 30px;
+    opacity: 0;
+}
+.text-content small{
+    margin: 5px;
+   font-size: 20px;
+   display: block;
+   opacity: 0;
+}
+.text-content .line{
+   width: 80%;
+   height: 1px;
+   background-color: white;
+   opacity: 0;
+}
+.text-content p{
+    padding: 10px 0px;
+    opacity: 0;
+}
+/* hide tat ca slide*/
+.slide ul li{
+    opacity: 0;
+}
+/* su kien hien thi cac slide len */
+.slide ul li.active{
+    opacity: 1;
+}
+/* hide het tat ca img cover va text-content */
+
+.slide-order .img-left-1,
+.slide-order .img-left-2,
+.slide-order .img-right,
+{
+   opacity: 0;
+}
+
+/* xu ly su hieu ung thi img cover va text-context */
+.slide ul li.active .slide-order .img-left-1,
+.slide ul li.active .slide-order .img-left-2{
+    animation: move-left-1 3s forwards;
+}
+@-webkit-keyframes move-left-1{
+    0%{ transform: translateX(-100%) translateY(100%) ;opacity: 0;}
+    60%{ transform: translateX(-100%) translateY(100%) ;opacity: 0;}
+    100% { transform: translateX(0) translateY(0) ;opacity: 0.4;}
+}
+
+
+.slide ul li.active .slide-order .img-right{
+    animation: move-right 3s forwards;
+}
+@-webkit-keyframes move-right{
+        0%{ transform: translateX(100%) translateY(-100%) ;opacity: 0;}
+      60%{ transform: translateX(100%) translateY(-100%) ;opacity: 0;}
+      100% { transform: translateX(0) translateY(0) ;opacity: 0.4;}
+}
+.slide ul li.active .slide-order .img-left-2{
+    animation-delay: 0.3s;
+}
+
+.slide ul li.active .text-content h2,
+.slide ul li.active .text-content small,
+.slide ul li.active .text-content .line,
+.slide ul li.active .text-content p{
+    animation: move-text 3s forwards;
+}
+@-webkit-keyframes move-text{
+    0%{transform: translateX(-100px) ;opacity: 0;}
+    60%{transform: translateX(-100px) ;opacity: 0;}
+    100%{transform: translateX(0px);opacity:1;}
+}
+.slide ul li.active .text-content h2{
+    animation-delay: 0.5s
+}
+.slide ul li.active .text-content small{
+    animation-delay: 1s
+}
+.slide ul li.active .text-content .line{
+    animation-delay: 1.5s
+}
+.slide ul li.active .text-content p{
+    animation-delay: 2s
+}
+
+
+
+/* xu ly giao dien 4 button */
+.button {
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.button ul{
+   display: inline;
+}
+.button ul li{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin:10px 30px;
+    list-style: none;
+    border: 3px solid white;
+    border-radius: 50%;
+    text-indent: -99999px;
+    cursor: pointer;
+}
+.act{
+    background: gray;
+}
+/* end */
